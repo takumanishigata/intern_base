@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="jumbotron">
+    <div class="row">
+      <div class="col-6 display-4">
+        <%= @post.name %>
+      </div>
+      <div class="col-4">
+        <%= image_tag @post.image.url, :class => "show-image" %>
+      </div>
+    </div>
+  </div>
+  <p class="alert alert-secondary">レビュワーの職種</p>
+  <div class="alert alert-light">
+    <%= @post.job %>
+  </div>
+  <p class="alert alert-secondary">感想</p>
+  <div class="alert alert-light">
+    <%= @post.content %>
+  </div>
+  <p class="alert alert-secondary">こんな人におすすめ</p>
+  <div class="alert alert-light">
+    <%= @post.recommend%>
+  </div>
+  <%= link_to '戻る', "/posts", :class => "btn btn-primary" %>
+</div>

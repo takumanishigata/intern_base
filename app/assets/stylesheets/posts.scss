@@ -1,3 +1,33 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// index
+.top-jumbotron {
+  height: 400px;
+  background: url(bg3.jpg) center no-repeat;
+  background-size: cover;
+}
+
+.main-title {
+  color: #fff;
+}
+
+.post-image {
+  height: 200px;
+}
+
+.post-body {
+  height: 200px;
+  p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+// show
+.show-image {
+  width: 520px;
+  height: 300px;
+}
