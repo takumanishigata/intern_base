@@ -3,3 +3,7 @@
 <% @user.posts.each do |post| %>
 <%= post.name %>
 <% end %>
+<% @likes.each do |like| %>
+<% post = Post.find_by(id:like.post_id)%>
+<%= link_to(post.name, "/posts/#{post.id}") %>
+<% end %>

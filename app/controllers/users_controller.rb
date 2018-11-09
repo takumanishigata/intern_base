@@ -1,8 +1,9 @@
 class UsersController < ApplicationController
-  before_action :autheticate_user, {only: [:show]}
+  before_action :authenticate_user, {only: [:show]}
   before_action :forbid_login_user, {only: [:new, :create, :login_form, :login]}
   def show
     @user = User.find(params[:id])
+    @likes = Like.where(user_id: @user.id)
   end
 
   def new

@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :autheticate_user, {only: [:show,:new,:create]}
+  before_action :authenticate_user, {only: [:show,:new,:create]}
 
   def index
     @posts = Post.all
@@ -17,6 +17,7 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @user = @post.user
+    @likes_count = Like.where(post_id: @post.id).count
   end
 
   private
