@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_action :autheticate_user, {only: [:show,:new,:create]}
+
   def index
     @posts = Post.all
   end
@@ -9,7 +11,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(permit_params)
     @post.save!
-    redirect_to("/posts")
+    redirect_to("/")
   end
 
   def show

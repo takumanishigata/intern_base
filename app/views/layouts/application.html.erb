@@ -13,20 +13,38 @@
 <body>
   <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <%= link_to "InternBase", "/posts",:class =>"navbar-brand" %>
+      <%= link_to "InternBase", "/",:class =>"navbar-brand" %>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
         aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
+          <% if @current_user %>
+          <li class="nav-item active">
+            <%= link_to @current_user.name,"users/#{@current_user.id}",:class => "nav-link"%>
+          </li>
           <li class="nav-item active">
             <%= link_to "投稿", "/posts/new",:class =>"nav-link" %>
           </li>
+          <li class="nav-item active">
+            <%= link_to "ログアウト", "/logout",:class =>"nav-link", :method=>"post" %>
+          </li>
+          <% else %>
+          <li class="nav-item active">
+            <%= link_to "新規登録", "/signup",:class =>"nav-link" %>
+          </li>
+          <li class="nav-item active">
+            <%= link_to "ログイン", "/login",:class =>"nav-link" %>
+          </li>
+          <% end %>
         </ul>
       </div>
     </nav>
   </header>
+  <% if flash[:notice] %>
+  <%= flash[:notice] %>
+  <% end %>
   <%= yield %>
 </body>
 
