@@ -5,5 +5,6 @@
 <% end %>
 <% @likes.each do |like| %>
 <% post = Post.find_by(id:like.post_id)%>
+<p>お気に入り</p>
 <%= link_to(post.name, "/posts/#{post.id}") %>
 <% end %>
