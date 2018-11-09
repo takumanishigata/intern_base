@@ -21,5 +21,6 @@
   <div class="alert alert-light">
     <%= @post.recommend%>
   </div>
+  <%= link_to @user.name, "/users/#{@user.id}" %>
   <%= link_to '戻る', "/", :class => "btn btn-primary" %>
 </div>

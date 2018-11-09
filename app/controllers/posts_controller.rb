@@ -16,10 +16,11 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @user = @post.user
   end
 
   private
   def permit_params
-    params.require(:post).permit(:name,:content,:image,:job,:recommend)
+    params.require(:post).permit(:name,:content,:image,:job,:recommend).merge(user_id: @current_user.id)
   end
 end
