@@ -1,6 +1,7 @@
 <%= image_tag @user.image.url %>
 <%= @user.name %>
 <% @user.posts.each do |post| %>
+<p>投稿した企業</p>
 <%= post.name %>
 <% end %>
 <% @likes.each do |like| %>
