@@ -5,9 +5,22 @@
         <%= @post.name %>
       </div>
       <div class="col-4">
-        <%= image_tag @post.image.url, :class => "show-image" %>
+        <%= image_tag @post.image.url, :class => "posts-show__image" %>
       </div>
     </div>
+  </div>
+  <div class="alert alert-light">
+  <p>投稿者 <%= link_to @user.name, "/users/#{@user.id}", :class => "text-secondary" %></p>
+  <p><% if Like.find_by(user_id:@current_user.id, post_id: @post.id) %>
+  お気に入り<%= link_to("/likes/#{@post.id}/destroy", {method: "post"}) do %>
+  <span class="fa fa-star like-btn-unlike"></span>
+  <% end %>
+  <% else %>
+  お気に入り<%= link_to("/likes/#{@post.id}/create", {method: "post"}) do %>
+  <span class="fa fa-star like-btn"></span>
+  <% end %>
+  <% end %>
+  <%= @likes_count %></p>
   </div>
   <p class="alert alert-secondary">レビュワーの職種</p>
   <div class="alert alert-light">
@@ -21,17 +34,7 @@
   <div class="alert alert-light">
     <%= @post.recommend%>
   </div>
-  <%= link_to @user.name, "/users/#{@user.id}" %>
 
-  <% if Like.find_by(user_id:@current_user.id, post_id: @post.id) %>
-  <%= link_to("/likes/#{@post.id}/destroy", {method: "post"}) do %>
-  <span class="fa fa-star like-btn-unlike"></span>
-  <% end %>
-  <% else %>
-  <%= link_to("/likes/#{@post.id}/create", {method: "post"}) do %>
-  <span class="fa fa-star like-btn"></span>
-  <% end %>
-  <% end %>
-  <%= @likes_count %>
+  
   <%= link_to '戻る', "/", :class => "btn btn-primary" %>
 </div>

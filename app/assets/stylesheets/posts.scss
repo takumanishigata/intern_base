@@ -3,33 +3,34 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 // index
-.top-jumbotron {
-  height: 400px;
-  background: url(bg3.jpg) center no-repeat;
-  background-size: cover;
-}
-
-.main-title {
-  color: #fff;
-}
-
-.post-image {
-  height: 200px;
-}
-
-.post-body {
-  height: 200px;
-  p {
+.posts-index{
+  &__jumbotron {
+    height: 400px;
+    background: url(bg3.jpg) center no-repeat;
+    background-size: cover;
+  }
+  &__title {
+    color: #fff;
+  }
+  &__image {
+    height: 200px; 
+  }
+  &__body {
+    height: 200px;
+    p {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    }
   }
 }
-
+  
 // show
-.show-image {
-  width: 520px;
-  height: 300px;
+.posts-show {
+  &__image {
+    width: 520px;
+    height: 300px; 
+  }
 }
 .like-btn {
   color: #8899a6;

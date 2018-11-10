@@ -1,11 +1,32 @@
-<%= image_tag @user.image.url %>
+<div class="user text-center">
+<div><%= image_tag @user.image.url, :class=> "users-show__image"%></div>
 <%= @user.name %>
-<% @user.posts.each do |post| %>
-<p>投稿した企業</p>
-<%= post.name %>
-<% end %>
+<p>投稿企業</p>
+
+<div class="container">
+  <div class="row">
+    <% @user.posts.each do |post|%>
+    <div class="col-md-4 post">   
+      <div class="card mb-4 shadow-sm">
+        <%= image_tag post.image.url,:class=>"card-img-top posts-index__image" %>
+        <div class="card-body posts-index__body">
+          <h5 class="card-title">
+            <%= post.name %>
+          </h5>
+          <p class="card-text">
+            <%= post.content %>
+          </p>
+          <%= link_to "より詳しく", "/posts/#{post.id}",:class=>"btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+<p>お気に入り</p>
 <% @likes.each do |like| %>
 <% post = Post.find_by(id:like.post_id)%>
-<p>お気に入り</p>
 <%= link_to(post.name, "/posts/#{post.id}") %>
 <% end %>
+</div>

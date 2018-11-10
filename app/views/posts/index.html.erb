@@ -1,6 +1,6 @@
-<div class="jumbotron jumbotron-fluid top-jumbotron">
+<div class="jumbotron jumbotron-fluid posts-index__jumbotron">
   <div class="container">
-    <h1 class="display-1 main-title">INTERN BASE</h1>
+    <h1 class="display-1 posts-index__title">INTERN BASE</h1>
   </div>
 </div>
 <div class="container">
@@ -8,8 +8,8 @@
     <% @posts.each do |post|%>
     <div class="col-md-4 post">   
       <div class="card mb-4 shadow-sm">
-        <%= image_tag post.image.url,:class=>"card-img-top post-image" %>
-        <div class="card-body post-body">
+        <%= image_tag post.image.url,:class=>"card-img-top posts-index__image" %>
+        <div class="card-body posts-index__body">
           <h5 class="card-title">
             <%= post.name %>
           </h5>
