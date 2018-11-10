@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="jumbotron">
+  <div class="jumbotron bg-light users-show__jumbotron">
     <div class="row">
       <div class="col-6 display-4">
         <%= @post.name %>
@@ -9,8 +9,8 @@
       </div>
     </div>
   </div>
-  <div class="alert alert-light">
-  <p>投稿者 <%= link_to @user.name, "/users/#{@user.id}", :class => "text-secondary" %></p>
+  <div class="alert">
+  <p>投稿者 <%= link_to @user.name, "/users/#{@user.id}", :class => "text-dark" %></p>
   <p><% if Like.find_by(user_id:@current_user.id, post_id: @post.id) %>
   お気に入り<%= link_to("/likes/#{@post.id}/destroy", {method: "post"}) do %>
   <span class="fa fa-star like-btn-unlike"></span>
@@ -22,19 +22,19 @@
   <% end %>
   <%= @likes_count %></p>
   </div>
-  <p class="alert alert-secondary">レビュワーの職種</p>
-  <div class="alert alert-light">
+  <p class="alert bg-light">レビュワーの職種</p>
+  <div class="alert">
     <%= @post.job %>
   </div>
-  <p class="alert alert-secondary">感想</p>
-  <div class="alert alert-light">
+  <p class="alert bg-light">感想</p>
+  <div class="alert">
     <%= @post.content %>
   </div>
-  <p class="alert alert-secondary">こんな人におすすめ</p>
-  <div class="alert alert-light">
+  <p class="alert bg-light">こんな人におすすめ</p>
+  <div class="alert">
     <%= @post.recommend%>
   </div>
 
   
-  <%= link_to '戻る', "/", :class => "btn btn-primary" %>
+  <%= link_to '戻る', "/", :class => "btn btn-info" %>
 </div>

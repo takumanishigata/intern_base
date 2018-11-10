@@ -1,32 +1,53 @@
-<div class="user text-center">
-<div><%= image_tag @user.image.url, :class=> "users-show__image"%></div>
-<%= @user.name %>
-<p>投稿企業</p>
-
 <div class="container">
-  <div class="row">
-    <% @user.posts.each do |post|%>
-    <div class="col-md-4 post">   
-      <div class="card mb-4 shadow-sm">
-        <%= image_tag post.image.url,:class=>"card-img-top posts-index__image" %>
-        <div class="card-body posts-index__body">
-          <h5 class="card-title">
-            <%= post.name %>
-          </h5>
-          <p class="card-text">
-            <%= post.content %>
-          </p>
-          <%= link_to "より詳しく", "/posts/#{post.id}",:class=>"btn btn-primary" %>
+<div class="user text-center">
+  <div>
+    <%= image_tag @user.image.url, :class=> "users-show__image"%>
+  </div>
+  <h3><%= @user.name %></h3>
+  <h5 class="alert bg-light">投稿企業</h5>
+
+  <div class="container">
+    <div class="row">
+      <% @user.posts.each do |post|%>
+      <div class="col-md-4 post">
+        <div class="card mb-4 shadow-sm">
+          <%= image_tag post.image.url,:class=>"card-img-top posts-index__image" %>
+          <div class="card-body posts-index__body">
+            <h5 class="card-title">
+              <%= post.name %>
+            </h5>
+            <p class="card-text">
+              <%= post.content %>
+            </p>
+            <%= link_to "より詳しく", "/posts/#{post.id}",:class=>"btn btn-info" %>
+          </div>
         </div>
       </div>
+      <% end %>
     </div>
-    <% end %>
+  </div>
+
+  <h5 class="alert bg-light">お気に入り</h5>
+  <div class="container">
+    <div class="row">
+      <% @likes.each do |like|%>
+      <% post = Post.find_by(id:like.post_id)%>
+      <div class="col-md-4 post">
+        <div class="card mb-4 shadow-sm">
+          <%= image_tag post.image.url,:class=>"card-img-top posts-index__image" %>
+          <div class="card-body posts-index__body">
+            <h5 class="card-title">
+              <%= post.name %>
+            </h5>
+            <p class="card-text">
+              <%= post.content %>
+            </p>
+            <%= link_to "より詳しく", "/posts/#{post.id}",:class=>"btn btn-info" %>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
   </div>
 </div>
-
-<p>お気に入り</p>
-<% @likes.each do |like| %>
-<% post = Post.find_by(id:like.post_id)%>
-<%= link_to(post.name, "/posts/#{post.id}") %>
-<% end %>
 </div>
