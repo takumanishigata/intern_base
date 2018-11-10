@@ -6,7 +6,7 @@
 <div class="container">
   <div class="row">
     <% @posts.each do |post|%>
-    <div class="col-md-4 post">   
+    <div class="col-md-4 col-sm-6 col-xs-12 post">   
       <div class="card mb-4 shadow-sm">
         <%= image_tag post.image.url,:class=>"card-img-top posts-index__image" %>
         <div class="card-body posts-index__body">
