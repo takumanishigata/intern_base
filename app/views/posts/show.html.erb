@@ -34,7 +34,6 @@
   <div class="alert">
     <%= @post.recommend%>
   </div>
-
-  
+  <%= link_to '編集', "/posts/#{@post.id}/edit", :class => "btn btn-info" %>
   <%= link_to '戻る', "/", :class => "btn btn-info" %>
 </div>

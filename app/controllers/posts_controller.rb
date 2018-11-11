@@ -20,6 +20,15 @@ class PostsController < ApplicationController
     @likes_count = Like.where(post_id: @post.id).count
   end
 
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    @post.update(params.require(:post).permit(:name,:content,:image,:job,:recommend))
+    redirect_to("/posts/#{@post.id}")
+  end
   private
   def permit_params
     params.require(:post).permit(:name,:content,:image,:job,:recommend).merge(user_id: @current_user.id)

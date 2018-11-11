@@ -1,0 +1,13 @@
+<%= form_for @post do |f| %>
+<%= f.label "会社名" %>
+<%= f.text_field :name, :class => "form-control" %>
+<%= f.label "画像" %>
+<%= f.file_field :image, :class => "form-control-file" %>
+<%= f.label "職種" %>
+<%= f.text_field :job, :class => "form-control" %>
+<%= f.label "感想" %>
+<%= f.text_area :content, :class => "form-control" %>
+<%= f.label "こんな人にオススメ！" %>
+<%= f.text_area :recommend, :class => "form-control" %>
+<%= f.submit value:"更新", :class => "btn btn-info" %>
+<% end %>
