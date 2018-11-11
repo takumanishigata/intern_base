@@ -1,4 +1,9 @@
 <%= form_for @user do |f| %>
+<% @user.errors.full_messages.each do |message| %>
+<div>
+<%= message %>
+</div>
+<% end %>
 <%= f.label "本人確認のためパスワードを入力してください" %>
 <%= f.password_field :password, :class => "form-control" %>
 <h5>変更項目</h5>

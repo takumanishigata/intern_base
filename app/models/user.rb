@@ -1,7 +1,8 @@
 class User < ApplicationRecord
   mount_uploader :image, ImageUploader
   has_secure_password
-  validates :email, {uniqueness:true}
+  validates :name, {presence: true}
+  validates :email, {presence: true, uniqueness: true}
   validates :password, {presence:true}
 
   def posts

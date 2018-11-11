@@ -6,12 +6,16 @@ class PostsController < ApplicationController
   end
 
   def new
+    @post=Post.new
   end
 
   def create
     @post = Post.new(permit_params)
-    @post.save!
-    redirect_to("/")
+    if @post.save
+      redirect_to("/")
+    else
+      render("posts/new")
+    end
   end
 
   def show
@@ -27,7 +31,11 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     @post.update(params.require(:post).permit(:name,:content,:image,:job,:recommend))
-    redirect_to("/posts/#{@post.id}")
+    if @post.save
+      redirect_to("/posts/#{@post.id}")
+    else
+      render("posts/edit")
+    end
   end
   private
   def permit_params

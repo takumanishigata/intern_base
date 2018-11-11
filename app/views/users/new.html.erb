@@ -1,4 +1,9 @@
 <%= form_for :user, url: '/users' do |f| %>
+<% @user.errors.full_messages.each do |message| %>
+<div>
+<%= message %>
+</div>
+<% end %>
 <%= f.label "名前" %>
 <%= f.text_field :name, :class => "form-control" %>
 <%= f.label "メールアドレス" %>

@@ -34,6 +34,8 @@
   <div class="alert">
     <%= @post.recommend%>
   </div>
+  <% if @post.user_id == @current_user.id %>
   <%= link_to '編集', "/posts/#{@post.id}/edit", :class => "btn btn-info" %>
+  <% end %>
   <%= link_to '戻る', "/", :class => "btn btn-info" %>
 </div>
