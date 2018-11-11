@@ -8,6 +8,7 @@
     height: 400px;
     background: url(bg3.jpg) center no-repeat;
     background-size: cover;
+    object-fit: cover;
   }
   &__title {
     color: #fff;
@@ -31,6 +32,7 @@
     width: 520px;
     height: 300px; 
     max-width: 100%;
+    object-fit: cover;
   }
 }
 .like-btn {
