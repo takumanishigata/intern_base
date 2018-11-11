@@ -4,6 +4,7 @@
     <%= image_tag @user.image.url, :class=> "users-show__image"%>
   </div>
   <h3><%= @user.name %></h3>
+  <%= link_to '編集', "/users/#{@user.id}/edit", :class => "btn btn-info" %>
   <h5 class="alert bg-light">投稿企業</h5>
 
   <div class="container">
