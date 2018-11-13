@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :authenticate_user, {only: [:show]}
   before_action :forbid_login_user, {only: [:new, :create, :login_form, :login]}
+  before_action :ensure_correct_user, {only: [:edit,:update]}
   def show
     @user = User.find(params[:id])
     @likes = Like.where(user_id: @user.id)
@@ -52,6 +53,14 @@ class UsersController < ApplicationController
     session[:user_id] = nil
     flash[:notice] = "ログアウトしました"
     redirect_to("/login")
+  end
+
+  def ensure_correct_user
+    @user = User.find_by(id: params[:id])
+    if @user.id != @current_user.id
+      flash[:notice] = "権限がありません"
+      redirect_to("/")
+    end
   end
 
   private
