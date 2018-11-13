@@ -31,7 +31,7 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    @post.update(params.require(:post).permit(:name,:content,:image,:job,:recommend))
+    @post.update(params.require(:post).permit(:name,:content,:image,:job,:recommend,:rating))
     if @post.save
       redirect_to("/posts/#{@post.id}")
     else
@@ -56,6 +56,6 @@ class PostsController < ApplicationController
 
   private
   def permit_params
-    params.require(:post).permit(:name,:content,:image,:job,:recommend).merge(user_id: @current_user.id)
+    params.require(:post).permit(:name,:content,:image,:job,:recommend,:rating).merge(user_id: @current_user.id)
   end
 end

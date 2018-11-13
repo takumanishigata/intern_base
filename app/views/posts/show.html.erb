@@ -3,6 +3,9 @@
     <div class="row">
       <div class="col-12 col-sm-6">
         <h1><%= @post.name %></h1>
+        <% @post.rating.times do%>
+        <span><img src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMjBweCIgaGVpZ2h0PSIyMHB4IiB2aWV3Qm94PSIwIDAgMjAgMjAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDIwIDIwIiB4bWw6c3BhY2U9InByZXNlcnZlIj48cG9seWdvbiBmaWxsPSIjRkZERjg4IiBwb2ludHM9IjEwLDAgMTMuMDksNi41ODMgMjAsNy42MzkgMTUsMTIuNzY0IDE2LjE4LDIwIDEwLDE2LjU4MyAzLjgyLDIwIDUsMTIuNzY0IDAsNy42MzkgNi45MSw2LjU4MyAiLz48L3N2Zz4=" class="posts-show__star" ></span>
+        <% end %>
       </div>
       <div class="col-12 col-sm-6">
         <%= image_tag @post.image.url, :class => "posts-show__image" %>
@@ -22,7 +25,7 @@
   <% end %>
   <%= @likes_count %></p>
   </div>
-  <p class="alert bg-light">インターンをここに決めた理由とギャップ</p>
+  <p class="alert bg-light">インターンをここに決めた理由と入ってからのギャップ</p>
   <div class="alert">
     <%= @post.content %>
   </div>

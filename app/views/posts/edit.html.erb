@@ -8,11 +8,23 @@
 <%= f.text_field :name, :class => "form-control" %>
 <%= f.label "画像" %>
 <%= f.file_field :image, :class => "form-control-file" %>
-<%= f.label "職種" %>
-<%= f.text_field :job, :class => "form-control" %>
-<%= f.label "感想" %>
+<div>
+<%= f.label "総合評価" %>
+</div>
+<div class="star-rating">
+<%= f.radio_button :rating, "1", :class => "star-rating__item" %><i></i>
+<%= f.radio_button :rating, "2", :class => "star-rating__item" %><i></i>
+<%= f.radio_button :rating, "3", :class => "star-rating__item" %><i></i>
+<%= f.radio_button :rating, "4", :class => "star-rating__item" %><i></i>
+<%= f.radio_button :rating, "5", :class => "star-rating__item" %><i></i>
+</div>
+<div>
+<%= f.label "インターンをここに決めた理由と入ってからのギャップ" %>
+</div>
 <%= f.text_area :content, :class => "form-control" %>
-<%= f.label "こんな人にオススメ！" %>
+<%= f.label "やっていた仕事と学べたこと" %>
+<%= f.text_area :job, :class => "form-control" %>
+<%= f.label "おすすめポイント" %>
 <%= f.text_area :recommend, :class => "form-control" %>
 <%= f.submit value:"更新", :class => "btn btn-info" %>
 <% end %>

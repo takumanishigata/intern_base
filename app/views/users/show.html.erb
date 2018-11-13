@@ -13,11 +13,11 @@
       <div class="col-md-4 post">
         <div class="card mb-4 shadow-sm">
           <%= image_tag post.image.url,:class=>"card-img-top posts-index__image" %>
-          <div class="card-body posts-index__body">
+          <div class="card-body users-index__body">
             <h5 class="card-title">
               <%= post.name %>
             </h5>
-            <p class="card-text">
+            <p class="card-text users-show__text">
               <%= post.content %>
             </p>
             <%= link_to "より詳しく", "/posts/#{post.id}",:class=>"btn btn-info" %>
@@ -40,7 +40,7 @@
             <h5 class="card-title">
               <%= post.name %>
             </h5>
-            <p class="card-text">
+            <p class="card-text users-show__text">
               <%= post.content %>
             </p>
             <%= link_to "より詳しく", "/posts/#{post.id}",:class=>"btn btn-info" %>

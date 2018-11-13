@@ -11,4 +11,13 @@
     object-fit: cover;
     border-radius: 50%;
   }
+  &__body {
+    height: 240px;
+  }
+  &__text {
+    position: relative;
+    width: 100%;
+    height: 70px;
+    overflow: hidden;
+  }
 }
