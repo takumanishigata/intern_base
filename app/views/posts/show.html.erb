@@ -13,7 +13,10 @@
     </div>
   </div>
   <div class="alert">
-  <p>投稿者 <%= link_to @user.name, "/users/#{@user.id}", :class => "text-dark" %></p>
+  <div class="posts-show__contributor">
+  <span>投稿者</span>
+  <a href=<%= "/users/#{@user.id}" %>><%= image_tag @user.image.url, :class => "posts-show__user" %></a>
+  </div>
   <p><% if Like.find_by(user_id:@current_user.id, post_id: @post.id) %>
   お気に入り<%= link_to("/likes/#{@post.id}/destroy", {method: "post"}) do %>
   <span class="fa fa-heart like-btn-unlike"></span>
