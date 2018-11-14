@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user, {only: [:show,:new,:create]}
-  before_action :ensure_correct_user, {only: [:edit,:update,:destroy]}
+  before_action :ensure_correct_user, {only: [:edit,:update]}
 
   def index
     @posts = Post.all
@@ -38,13 +38,6 @@ class PostsController < ApplicationController
       render("posts/edit")
     end
   end
-
-   def destroy
-    @post = Post.find(params[:id])
-    @post.destroy
-    flash[:notice] = "投稿を削除しました"
-    redirect_to("/")
-   end
 
    def ensure_correct_user
     @post = Post.find_by(id: params[:id])
