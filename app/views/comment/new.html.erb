@@ -1,0 +1,29 @@
+<%= form_for :comment, url: "/posts/#{@post.id}/comment" do |f| %>
+<% @comment.errors.full_messages.each do |message| %>
+<div>
+<%= message %>
+</div>
+<% end %>
+<%= f.hidden_field :post_id, value: @post.id %>
+<%= f.label "タイトル" %>
+<%= f.text_field :title, :class => "form-control" %>
+<div>
+<%= f.label "総合評価" %>
+</div>
+<div class="star-rating">
+<%= f.radio_button :rating, "1", :class => "star-rating__item" %><i></i>
+<%= f.radio_button :rating, "2", :class => "star-rating__item" %><i></i>
+<%= f.radio_button :rating, "3", :class => "star-rating__item" %><i></i>
+<%= f.radio_button :rating, "4", :class => "star-rating__item" %><i></i>
+<%= f.radio_button :rating, "5", :class => "star-rating__item" %><i></i>
+</div>
+<div>
+<%= f.label "インターンをここに決めた理由と入ってからのギャップ" %>
+<%= f.text_area :content, :class => "form-control" %>
+</div>
+<%= f.label "やっていた仕事と学べたこと" %>
+<%= f.text_area :job, :class => "form-control" %>
+<%= f.label "おすすめポイント" %>
+<%= f.text_area :recommend, :class => "form-control" %>
+<%= f.submit value:"投稿", :class => "btn btn-info" %>
+<% end %>
