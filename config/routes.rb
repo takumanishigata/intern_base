@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+  get "category/:category" => "posts#category"
   get 'comment/new'
   get 'comment/create'
   post "likes/:post_id/create" => "likes#create"

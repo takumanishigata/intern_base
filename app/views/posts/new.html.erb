@@ -9,6 +9,16 @@
 <%= f.label "画像" %>
 <%= f.file_field :image, :class => "form-control-file" %>
 <div>
+<%= f.label "カテゴリー" %>
+</div>
+<div>
+<%= f.radio_button :category, "1" %>
+<%= f.radio_button :category, "2" %>
+<%= f.radio_button :category, "3" %>
+<%= f.radio_button :category, "4" %>
+<%= f.radio_button :category, "5" %>
+</div>
+<div>
 <%= f.label "総合評価" %>
 </div>
 <div class="star-rating">

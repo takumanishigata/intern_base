@@ -39,6 +39,10 @@ class PostsController < ApplicationController
     end
   end
 
+  def category
+    @posts = Post.where(category: params[:category])
+  end
+
    def ensure_correct_user
     @post = Post.find_by(id: params[:id])
     if @post.user_id != @current_user.id
@@ -49,6 +53,6 @@ class PostsController < ApplicationController
 
   private
   def permit_params
-    params.require(:post).permit(:name,:content,:image,:job,:recommend,:rating).merge(user_id: @current_user.id)
+    params.require(:post).permit(:name,:content,:image,:job,:recommend,:rating,:category).merge(user_id: @current_user.id)
   end
 end
