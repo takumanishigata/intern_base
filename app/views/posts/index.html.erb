@@ -3,22 +3,24 @@
     <h1 class="display-1 posts-index__title">INTERN BASE</h1>
   </div>
 </div>
-<div class="container">
+
+<div class="container alert alert-light">
+<h2 class="alert alert-light">とがった事業やカルチャーのスタートアップ</h2>
   <div class="row">
-    <% @posts.each do |post|%>
+    <% @posts1.first(3).each do |post|%>
     <div class="col-md-4 col-sm-6 col-xs-12 post">
       <div class="card mb-4 shadow-sm">
         <%= image_tag post.image.url,:class=>"card-img-top posts-index__image" %>
         <div class="card-body posts-index__body">
-          <h5 class="card-title">
+          <h5 class="card-title text-dark">
             <%= post.name %>
           </h5>
-          <p class="card-text">
+          <p class="card-text text-dark">
             <% post.rating.times do%>
             <span><img src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMjBweCIgaGVpZ2h0PSIyMHB4IiB2aWV3Qm94PSIwIDAgMjAgMjAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDIwIDIwIiB4bWw6c3BhY2U9InByZXNlcnZlIj48cG9seWdvbiBmaWxsPSIjRkZERjg4IiBwb2ludHM9IjEwLDAgMTMuMDksNi41ODMgMjAsNy42MzkgMTUsMTIuNzY0IDE2LjE4LDIwIDEwLDE2LjU4MyAzLjgyLDIwIDUsMTIuNzY0IDAsNy42MzkgNi45MSw2LjU4MyAiLz48L3N2Zz4=" class="posts-index__star" ></span>
             <% end %>
           </p>
-          <p class="card-text posts-index__text">
+          <p class="card-text text-dark posts-index__text">
             <%= post.content %>
           </p>
           <%= link_to "より詳しく", "/posts/#{post.id}",:class=>"btn btn-info" %>
@@ -27,4 +29,118 @@
     </div>
     <% end %>
   </div>
+  <%= link_to "全て見る", "/category/1",:class=>"btn btn-info center-block" %>
+</div>
+
+
+<div class="container alert alert-light">
+<h2 class="alert alert-light">急成長中のミドルベンチャー</h2>
+  <div class="row">
+    <% @posts2.first(3).each do |post|%>
+    <div class="col-md-4 col-sm-6 col-xs-12 post">
+      <div class="card mb-4 shadow-sm">
+        <%= image_tag post.image.url,:class=>"card-img-top posts-index__image" %>
+        <div class="card-body posts-index__body">
+          <h5 class="card-title text-dark">
+            <%= post.name %>
+          </h5>
+          <p class="card-text text-dark">
+            <% post.rating.times do%>
+            <span><img src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMjBweCIgaGVpZ2h0PSIyMHB4IiB2aWV3Qm94PSIwIDAgMjAgMjAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDIwIDIwIiB4bWw6c3BhY2U9InByZXNlcnZlIj48cG9seWdvbiBmaWxsPSIjRkZERjg4IiBwb2ludHM9IjEwLDAgMTMuMDksNi41ODMgMjAsNy42MzkgMTUsMTIuNzY0IDE2LjE4LDIwIDEwLDE2LjU4MyAzLjgyLDIwIDUsMTIuNzY0IDAsNy42MzkgNi45MSw2LjU4MyAiLz48L3N2Zz4=" class="posts-index__star" ></span>
+            <% end %>
+          </p>
+          <p class="card-text text-dark posts-index__text">
+            <%= post.content %>
+          </p>
+          <%= link_to "より詳しく", "/posts/#{post.id}",:class=>"btn btn-info" %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+  <%= link_to "全て見る", "/category/2",:class=>"btn btn-info" %>
+</div>
+
+<div class="alert alert-light container">
+<h2 class="alert alert-light">クリエイティブを活かせるメガベンチャー</h2>
+  <div class="row">
+    <% @posts3.first(3).each do |post|%>
+    <div class="col-md-4 col-sm-6 col-xs-12 post">
+      <div class="card mb-4 shadow-sm">
+        <%= image_tag post.image.url,:class=>"card-img-top posts-index__image" %>
+        <div class="card-body posts-index__body">
+          <h5 class="card-title text-dark">
+            <%= post.name %>
+          </h5>
+          <p class="card-text text-dark">
+            <% post.rating.times do%>
+            <span><img src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMjBweCIgaGVpZ2h0PSIyMHB4IiB2aWV3Qm94PSIwIDAgMjAgMjAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDIwIDIwIiB4bWw6c3BhY2U9InByZXNlcnZlIj48cG9seWdvbiBmaWxsPSIjRkZERjg4IiBwb2ludHM9IjEwLDAgMTMuMDksNi41ODMgMjAsNy42MzkgMTUsMTIuNzY0IDE2LjE4LDIwIDEwLDE2LjU4MyAzLjgyLDIwIDUsMTIuNzY0IDAsNy42MzkgNi45MSw2LjU4MyAiLz48L3N2Zz4=" class="posts-index__star" ></span>
+            <% end %>
+          </p>
+          <p class="card-text text-dark posts-index__text">
+            <%= post.content %>
+          </p>
+          <%= link_to "より詳しく", "/posts/#{post.id}",:class=>"btn btn-info" %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+  <%= link_to "全て見る", "/category/3",:class=>"btn btn-info" %>
+</div>
+
+<div class="container alert alert-light">
+<h2 class="alert alert-light">技術力が強みのテックカンパニー</h2>
+  <div class="row">
+    <% @posts4.first(3).each do |post|%>
+    <div class="col-md-4 col-sm-6 col-xs-12 post">
+      <div class="card mb-4 shadow-sm">
+        <%= image_tag post.image.url,:class=>"card-img-top posts-index__image" %>
+        <div class="card-body posts-index__body">
+          <h5 class="card-title text-dark">
+            <%= post.name %>
+          </h5>
+          <p class="card-text text-dark">
+            <% post.rating.times do%>
+            <span><img src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMjBweCIgaGVpZ2h0PSIyMHB4IiB2aWV3Qm94PSIwIDAgMjAgMjAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDIwIDIwIiB4bWw6c3BhY2U9InByZXNlcnZlIj48cG9seWdvbiBmaWxsPSIjRkZERjg4IiBwb2ludHM9IjEwLDAgMTMuMDksNi41ODMgMjAsNy42MzkgMTUsMTIuNzY0IDE2LjE4LDIwIDEwLDE2LjU4MyAzLjgyLDIwIDUsMTIuNzY0IDAsNy42MzkgNi45MSw2LjU4MyAiLz48L3N2Zz4=" class="posts-index__star" ></span>
+            <% end %>
+          </p>
+          <p class="card-text text-dark posts-index__text">
+            <%= post.content %>
+          </p>
+          <%= link_to "より詳しく", "/posts/#{post.id}",:class=>"btn btn-info" %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+  <%= link_to "全て見る", "/category/4",:class=>"btn btn-info" %>
+</div>
+
+<div class="container alert alert-light">
+<h2 class="alert alert-light">事業規模が大きい大手企業</h2>
+  <div class="row">
+    <% @posts5.first(3).each do |post|%>
+    <div class="col-md-4 col-sm-6 col-xs-12 post">
+      <div class="card mb-4 shadow-sm">
+        <%= image_tag post.image.url,:class=>"card-img-top posts-index__image" %>
+        <div class="card-body posts-index__body">
+          <h5 class="card-title text-dark">
+            <%= post.name %>
+          </h5>
+          <p class="card-text text-dark">
+            <% post.rating.times do%>
+            <span><img src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMjBweCIgaGVpZ2h0PSIyMHB4IiB2aWV3Qm94PSIwIDAgMjAgMjAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDIwIDIwIiB4bWw6c3BhY2U9InByZXNlcnZlIj48cG9seWdvbiBmaWxsPSIjRkZERjg4IiBwb2ludHM9IjEwLDAgMTMuMDksNi41ODMgMjAsNy42MzkgMTUsMTIuNzY0IDE2LjE4LDIwIDEwLDE2LjU4MyAzLjgyLDIwIDUsMTIuNzY0IDAsNy42MzkgNi45MSw2LjU4MyAiLz48L3N2Zz4=" class="posts-index__star" ></span>
+            <% end %>
+          </p>
+          <p class="card-text text-dark posts-index__text">
+            <%= post.content %>
+          </p>
+          <%= link_to "より詳しく", "/posts/#{post.id}",:class=>"btn btn-info" %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+  <%= link_to "全て見る", "/category/5",:class=>"btn btn-info" %>
 </div>

@@ -10,24 +10,29 @@
       <div class="col-12 col-sm-6">
         <%= image_tag @post.image.url, :class => "posts-show__image" %>
       </div>
-    </div>
-  </div>
-  <div class="alert">
-  <div class="posts-show__contributor">
-  <span>投稿者</span>
-  <a href=<%= "/users/#{@user.id}" %>><%= image_tag @user.image.url, :class => "posts-show__user" %></a>
-  </div>
-  <p><% if Like.find_by(user_id:@current_user.id, post_id: @post.id) %>
-  お気に入り<%= link_to("/likes/#{@post.id}/destroy", {method: "post"}) do %>
+      <div class="alert">
+  <% if Like.find_by(user_id:@current_user.id, post_id: @post.id) %>
+  お気に入り
+  <%= link_to("/likes/#{@post.id}/destroy", {method: "post"}) do %>
   <span class="fa fa-heart like-btn-unlike"></span>
   <% end %>
   <% else %>
-  お気に入り<%= link_to("/likes/#{@post.id}/create", {method: "post"}) do %>
+  お気に入り
+  <%= link_to("/likes/#{@post.id}/create", {method: "post"}) do %>
   <span class="fa fa-heart like-btn"></span>
   <% end %>
   <% end %>
-  <%= @likes_count %></p>
-  </div>
+  <%= @likes_count %>
+</div>
+<div class="posts-show__contributor">
+  <span>投稿者</span>
+  <a href=<%="/users/#{@user.id}" %>>
+    <%= image_tag @user.image.url, :class => "posts-show__user" %></a>
+</div>
+</div>
+</div>
+
+  <div class="alert-light">
   <p class="alert bg-light">インターンをここに決めた理由と入ってからのギャップ</p>
   <div class="alert">
     <%= @post.content %>
@@ -40,18 +45,29 @@
   <div class="alert">
     <%= @post.recommend%>
   </div>
+  </div>
+  <h3 class="alert bg-light text-center">ここで働いていた他の人のレビュー</h3>
+  <div>
   <% @post.comments.each do |comment| %>
-  <%= comment.title %>
+  <div class="alert alert-light">
   <% user = User.find_by(id:comment.user_id)%>
   <a href=<%= "/users/#{user.id}" %>><%= image_tag user.image.url, :class => "posts-show__user" %></a>
+  <h3><%= comment.title %></h3>
+  <div>
   <% comment.rating.times do %>
   <span><img src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMjBweCIgaGVpZ2h0PSIyMHB4IiB2aWV3Qm94PSIwIDAgMjAgMjAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDIwIDIwIiB4bWw6c3BhY2U9InByZXNlcnZlIj48cG9seWdvbiBmaWxsPSIjRkZERjg4IiBwb2ludHM9IjEwLDAgMTMuMDksNi41ODMgMjAsNy42MzkgMTUsMTIuNzY0IDE2LjE4LDIwIDEwLDE2LjU4MyAzLjgyLDIwIDUsMTIuNzY0IDAsNy42MzkgNi45MSw2LjU4MyAiLz48L3N2Zz4="></span>
   <% end %>
-  <%= comment.content %>
-  <%= comment.job %>
-  <%= comment.recommend %>
+  </div>
+  <p class="alert bg-light">インターンをここに決めた理由と入ってからのギャップ</p>
+  <p class="alert"><%= comment.content %></p>
+  <p class="alert bg-light">やっていた仕事と学べたこと</p>
+  <p class="alert"><%= comment.job %></p>
+  <p class="alert bg-light">おすすめポイント</p>
+  <p class="alert"><%= comment.recommend %></p>
+  </div>
   <% end %>
-  <%= link_to "コメントを追加", "/posts/#{@post.id}/comment/new" %>
+  </div>
+  <%= link_to "レビューを書く", "/posts/#{@post.id}/comment/new", :class => "btn btn-info" %>
   <% if @post.user_id == @current_user.id %>
   <%= link_to '編集', "/posts/#{@post.id}/edit", :class => "btn btn-info" %>
   <% end %>

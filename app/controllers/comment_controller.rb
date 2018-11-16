@@ -6,8 +6,9 @@ class CommentController < ApplicationController
 
   def create
     @comment = Comment.new(comment_params)
+    @post = Post.find_by(id: params[:post_id])
     if @comment.save
-      redirect_to("/")
+      redirect_to("/posts/#{@post.id}")
     else
       @comment.valid?
       render action: :new
