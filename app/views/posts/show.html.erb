@@ -67,6 +67,10 @@
   <p class="alert"><%= comment.job %></p>
   <p class="alert bg-light">おすすめポイント</p>
   <p class="alert"><%= comment.recommend %></p>
+ <% if user.id == @current_user.id %>
+  <%= link_to 'レビューを編集する', "/posts/#{@post.id}/comment/#{comment.id}/edit", :class => "btn btn-info mb-3" %>
+  <%= link_to 'レビューを削除する', "/posts/#{@post.id}/comment/#{comment.id}", :method => "delete", :class => "btn btn-info mb-3" %>
+  <% end %>
   </div>
   <% end %>
   </div>

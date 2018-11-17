@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
 
+  post "/posts/:post_id/comment/:id" => "comment#update"
   get "category/:category" => "posts#category"
-  get 'comment/new'
-  get 'comment/create'
   post "likes/:post_id/create" => "likes#create"
   post "likes/:post_id/destroy" => "likes#destroy"
   get "/" => "posts#index"
@@ -11,7 +10,7 @@ Rails.application.routes.draw do
   post "login" => "users#login"
   post "logout" => "users#logout"
   resources :posts,:only => [:show,:new,:create,:edit,:update,:destroy] do
-    resources :comment, :only => [:new,:create]
+    resources :comment, :only => [:new,:create,:edit,:update,:destroy]
   end
   resources :users,:only => [:show,:new,:create,:edit,:update,:destroy]
 end
