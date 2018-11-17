@@ -7,8 +7,8 @@
 <div class="container alert alert-light">
 <h2 class="alert alert-light">とがった事業やカルチャーのスタートアップ</h2>
   <div class="row">
-    <% @posts1.first(3).each do |post|%>
-    <div class="col-md-4 col-sm-6 col-xs-6 post">
+    <% @posts1.first(4).each do |post|%>
+    <div class="col-md-3 col-sm-6 col-6 post">
       <div class="card mb-4 shadow-sm">
         <%= image_tag post.image.url,:class=>"card-img-top posts-index__image" %>
         <div class="card-body posts-index__body">
@@ -32,12 +32,11 @@
   <%= link_to "全て見る", "/category/1",:class=>"btn btn-info center-block" %>
 </div>
 
-
 <div class="container alert alert-light">
 <h2 class="alert alert-light">急成長中のミドルベンチャー</h2>
   <div class="row">
-    <% @posts2.first(3).each do |post|%>
-    <div class="col-md-4 col-sm-6 col-xs-6 post">
+    <% @posts2.first(4).each do |post|%>
+    <div class="col-md-3 col-sm-6 col-6 post">
       <div class="card mb-4 shadow-sm">
         <%= image_tag post.image.url,:class=>"card-img-top posts-index__image" %>
         <div class="card-body posts-index__body">
@@ -64,8 +63,8 @@
 <div class="alert alert-light container">
 <h2 class="alert alert-light">クリエイティブを活かせるメガベンチャー</h2>
   <div class="row">
-    <% @posts3.first(3).each do |post|%>
-    <div class="col-md-4 col-sm-6 col-xs-6 post">
+    <% @posts3.first(4).each do |post|%>
+    <div class="col-md-3 col-sm-6 col-6 post">
       <div class="card mb-4 shadow-sm">
         <%= image_tag post.image.url,:class=>"card-img-top posts-index__image" %>
         <div class="card-body posts-index__body">
@@ -92,8 +91,8 @@
 <div class="container alert alert-light">
 <h2 class="alert alert-light">技術力が強みのテックカンパニー</h2>
   <div class="row">
-    <% @posts4.first(3).each do |post|%>
-    <div class="col-md-4 col-sm-6 col-xs-6 post">
+    <% @posts4.first(4).each do |post|%>
+    <div class="col-md-3 col-sm-6 col-6 post">
       <div class="card mb-4 shadow-sm">
         <%= image_tag post.image.url,:class=>"card-img-top posts-index__image" %>
         <div class="card-body posts-index__body">
@@ -120,8 +119,8 @@
 <div class="container alert alert-light mb-5">
 <h2 class="alert alert-light">事業規模が大きい大手企業</h2>
   <div class="row">
-    <% @posts5.first(3).each do |post|%>
-    <div class="col-md-4 col-sm-6 col-xs-6 post">
+    <% @posts5.first(4).each do |post|%>
+    <div class="col-md-3 col-sm-6 col-6 post">
       <div class="card mb-4 shadow-sm">
         <%= image_tag post.image.url,:class=>"card-img-top posts-index__image" %>
         <div class="card-body posts-index__body">
