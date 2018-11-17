@@ -24,6 +24,7 @@
             <%= post.content %>
           </p>
           <%= link_to "より詳しく", "/posts/#{post.id}",:class=>"btn btn-info" %>
+          <span class="fa fa-comments text-right"><%= Comment.where(post_id:post.id).count %></span>
         </div>
       </div>
     </div>
@@ -52,6 +53,7 @@
             <%= post.content %>
           </p>
           <%= link_to "より詳しく", "/posts/#{post.id}",:class=>"btn btn-info" %>
+          <span class="fa fa-comments text-right"><%= Comment.where(post_id:post.id).count %></span>
         </div>
       </div>
     </div>
@@ -80,6 +82,7 @@
             <%= post.content %>
           </p>
           <%= link_to "より詳しく", "/posts/#{post.id}",:class=>"btn btn-info" %>
+          <span class="fa fa-comments text-right"><%= Comment.where(post_id:post.id).count %></span>
         </div>
       </div>
     </div>
@@ -108,6 +111,7 @@
             <%= post.content %>
           </p>
           <%= link_to "より詳しく", "/posts/#{post.id}",:class=>"btn btn-info" %>
+          <span class="fa fa-comments text-right"><%= Comment.where(post_id:post.id).count %></span>
         </div>
       </div>
     </div>
@@ -136,6 +140,7 @@
             <%= post.content %>
           </p>
           <%= link_to "より詳しく", "/posts/#{post.id}",:class=>"btn btn-info" %>
+          <span class="fa fa-comments text-right"><%= Comment.where(post_id:post.id).count %></span>
         </div>
       </div>
     </div>
