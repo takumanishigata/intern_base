@@ -1,4 +1,21 @@
-<div class="container">
+<div class="mt-5 alert alert-light">
+<% if params[:category] == "1" %>
+  <h2>とがった事業やカルチャーのスタートアップ</h2>
+<% end %>
+<% if params[:category] == "2" %>
+  <h2>急成長中のミドルベンチャー</h2>
+<% end %>
+<% if params[:category] == "3" %>
+  <h2>クリエイティブを活かせるメガベンチャー</h2>
+<% end %>
+<% if params[:category] == "4" %>
+  <h2>技術力が強みのテックカンパニー</h2>
+<% end %>
+<% if params[:category] == "5" %>
+  <h2>事業規模が大きい大手企業</h2>
+<% end %>
+</div>
+<div class="container mb-5">
   <div class="row">
     <% @posts.each do |post|%>
     <div class="col-md-4 col-sm-6 col-xs-12 post">

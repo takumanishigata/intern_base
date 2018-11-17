@@ -1,10 +1,11 @@
+<div class="container users-new">
 <%= form_for :user, url: '/users' do |f| %>
 <% @user.errors.full_messages.each do |message| %>
 <div>
 <%= message %>
 </div>
 <% end %>
-<%= f.label "名前" %>
+<%= f.label "ニックネーム" %>
 <%= f.text_field :name, :class => "form-control" %>
 <%= f.label "メールアドレス" %>
 <%= f.email_field :email,:class => "form-control" %>
@@ -12,5 +13,6 @@
 <%= f.password_field :password, :class => "form-control" %>
 <%=f.label "画像をアップロード" %>
 <%= f.file_field :image, :class => "form-control-file" %>
-<%= f.submit value:"新規登録", :class => "btn btn-primary" %>
+<%= f.submit value:"新規登録", :class => "btn btn-info mt-3" %>
 <% end %>
+</div>

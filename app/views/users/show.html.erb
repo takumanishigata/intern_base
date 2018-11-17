@@ -1,11 +1,11 @@
-<div class="container">
+<div class="container mt-5 mb-5">
 <div class="user text-center">
   <div>
-    <%= image_tag @user.image.url, :class=> "users-show__image"%>
+    <%= image_tag @user.image.url, :class=> "users-show__image mt-5"%>
   </div>
   <h3><%= @user.name %></h3>
   <% if @user.id == @current_user.id %>
-  <%= link_to '編集', "/users/#{@user.id}/edit", :class => "btn btn-info" %>
+  <%= link_to '編集', "/users/#{@user.id}/edit", :class => "btn btn-info mb-3" %>
   <% end %>
   <h5 class="alert bg-light">投稿企業</h5>
 

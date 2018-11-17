@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container mt-5 mb-5">
   <div class="jumbotron bg-light users-show__jumbotron">
     <div class="row">
       <div class="col-12 col-sm-6">
@@ -46,6 +46,9 @@
     <%= @post.recommend%>
   </div>
   </div>
+  <% if @post.user_id == @current_user.id %>
+  <%= link_to '編集', "/posts/#{@post.id}/edit", :class => "btn btn-info mb-3" %>
+  <% end %>
   <h3 class="alert bg-light text-center">ここで働いていた他の人のレビュー</h3>
   <div>
   <% @post.comments.each do |comment| %>
@@ -68,8 +71,5 @@
   <% end %>
   </div>
   <%= link_to "レビューを書く", "/posts/#{@post.id}/comment/new", :class => "btn btn-info" %>
-  <% if @post.user_id == @current_user.id %>
-  <%= link_to '編集', "/posts/#{@post.id}/edit", :class => "btn btn-info" %>
-  <% end %>
-  <%= link_to '戻る', "/", :class => "btn btn-info" %>
+  <%= link_to 'トップに戻る', "/", :class => "btn btn-info" %>
 </div>

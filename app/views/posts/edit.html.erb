@@ -1,3 +1,4 @@
+<div class="container posts-edit mb-5">
 <%= form_for @post do |f| %>
 <% @post.errors.full_messages.each do |message| %>
 <div>
@@ -26,5 +27,6 @@
 <%= f.text_area :job, :class => "form-control" %>
 <%= f.label "おすすめポイント" %>
 <%= f.text_area :recommend, :class => "form-control" %>
-<%= f.submit value:"更新", :class => "btn btn-info" %>
+<%= f.submit value:"更新", :class => "btn btn-info mt-3" %>
 <% end %>
+</div>

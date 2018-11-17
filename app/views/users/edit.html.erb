@@ -1,3 +1,4 @@
+<div class="container users-edit mb-5">
 <%= form_for @user do |f| %>
 <% @user.errors.full_messages.each do |message| %>
 <div>
@@ -7,7 +8,7 @@
 <%= f.label "本人確認のためパスワードを入力してください" %>
 <%= f.password_field :password, :class => "form-control" %>
 <h5>変更項目</h5>
-<%= f.label "名前" %>
+<%= f.label "ニックネーム" %>
 <%= f.text_field :name, :class => "form-control" %>
 <%= f.label "メールアドレス" %>
 <%= f.email_field :email,:class => "form-control" %>
@@ -15,3 +16,4 @@
 <%= f.file_field :image, :class => "form-control-file" %>
 <%= f.submit value:"更新", :class => "btn btn-primary" %>
 <% end %>
+</div>
