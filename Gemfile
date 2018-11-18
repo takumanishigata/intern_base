@@ -74,4 +74,5 @@ gem 'jquery-rails'
 #herokuデプロイ用設定
 group :production do
   gem 'pg'
+  gem 'cloudinary'
 end

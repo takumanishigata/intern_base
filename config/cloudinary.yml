@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: hnmaqglvs
+  api_key: '268229158128979'
+  api_secret: R9Jo62qBMgzfWvutsoYrBrm1XZY
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: hnmaqglvs
+  api_key: '268229158128979'
+  api_secret: R9Jo62qBMgzfWvutsoYrBrm1XZY
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: hnmaqglvs
+  api_key: '268229158128979'
+  api_secret: R9Jo62qBMgzfWvutsoYrBrm1XZY
+  enhance_image_tag: true
+  static_image_support: false
