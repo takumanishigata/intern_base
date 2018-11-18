@@ -37,7 +37,7 @@ class CommentController < ApplicationController
     @post = Post.find(params[:id])
     @comment = Comment.find(params[:id])
     @comment.destroy
-    flash[:notice] = "投稿を削除しました"	
+    flash[:notice] = "レビューを削除しました"	
     redirect_to("/posts/#{@comment.post_id}")
   end
 
