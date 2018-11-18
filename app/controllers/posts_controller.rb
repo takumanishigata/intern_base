@@ -3,11 +3,11 @@ class PostsController < ApplicationController
   before_action :ensure_correct_user, {only: [:edit,:update]}
 
   def index
-    @posts1 = Post.where(category: 1)
-    @posts2 = Post.where(category: 2)
-    @posts3 = Post.where(category: 3)
-    @posts4 = Post.where(category: 4)
-    @posts5 = Post.where(category: 5)
+    @posts1 = Post.where(category: 1).order(created_at: :desc)
+    @posts2 = Post.where(category: 2).order(created_at: :desc)
+    @posts3 = Post.where(category: 3).order(created_at: :desc)
+    @posts4 = Post.where(category: 4).order(created_at: :desc)
+    @posts5 = Post.where(category: 5).order(created_at: :desc)
   end
 
   def new
