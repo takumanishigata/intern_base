@@ -6,13 +6,13 @@
 </div>
 <% end %>
 <%= f.label "会社名", :class =>"mt-5" %>
-<%= f.text_field :name, :class => "form-control" %>
+<%= f.text_field :name, :class => "form-control mb-3", :placeholder => "インターンベース株式会社" %>
 <%= f.label "画像" %>
-<%= f.file_field :image, :class => "form-control-file" %>
+<%= f.file_field :image, :class => "form-control-file mb-3" %>
 <div>
-<%= f.label "カテゴリー" %>
+<%= f.label "カテゴリー(いずれかで最も当てはまるものを選んで下さい。)" %>
 </div>
-<div>
+<div class="mb-3">
 <div><%= f.radio_button :category, "1" %>とがった事業やカルチャーのスタートアップ</div>
 <div><%= f.radio_button :category, "2" %>急成長中のミドルベンチャー</div>
 <div><%= f.radio_button :category, "3" %>クリエイティブを活かせるメガベンチャー</div>
@@ -22,7 +22,7 @@
 <div>
 <%= f.label "総合評価" %>
 </div>
-<div class="star-rating">
+<div class="star-rating mb-3">
 <%= f.radio_button :rating, "1", :class => "star-rating__item" %><i></i>
 <%= f.radio_button :rating, "2", :class => "star-rating__item" %><i></i>
 <%= f.radio_button :rating, "3", :class => "star-rating__item" %><i></i>
@@ -31,12 +31,12 @@
 </div>
 <div>
 <%= f.label "インターンをここに決めた理由と入ってからのギャップ" %>
-<%= f.text_area :content, :class => "form-control" %>
+<%= f.text_area :content, :class => "form-control mb-3",:placeholder => "Webエンジニアとして実務経験を積みたいと思っていました。この会社では学生向けのサービスを自社で開発している点に魅力を感じて応募しました。ギャップは思った以上にいろんな仕事を振られることです。タスク抱えすぎて死にそうになったことがあります。" %>
 </div>
 <%= f.label "やっていた仕事と学べたこと" %>
-<%= f.text_area :job, :class => "form-control" %>
+<%= f.text_area :job, :class => "form-control mb-3",:placeholder => "フロントエンドエンジニアとしてサイトの見た目を作っていました。独学では学べなかった複数人での開発工程を学べたのが良かったです。" %>
 <%= f.label "おすすめポイント" %>
-<%= f.text_area :recommend, :class => "form-control" %>
+<%= f.text_area :recommend, :class => "form-control",:placeholder => "わからないところなどすぐ聞ける環境があります。自分で学びたいと思えば自主開発のアドバイスももらえたりするので、駆け出しエンジニアにはうってつけの環境だと思います。" %>
 <%= f.submit value:"投稿", :class => "btn btn-info mt-3" %>
 <% end %>
 </div>

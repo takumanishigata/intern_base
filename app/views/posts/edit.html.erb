@@ -6,13 +6,13 @@
 </div>
 <% end %>
 <%= f.label "会社名" %>
-<%= f.text_field :name, :class => "form-control" %>
+<%= f.text_field :name, :class => "form-control mb-3" %>
 <%= f.label "画像" %>
-<%= f.file_field :image, :class => "form-control-file" %>
+<%= f.file_field :image, :class => "form-control-file mb-3" %>
 <div>
 <%= f.label "総合評価" %>
 </div>
-<div class="star-rating">
+<div class="star-rating mb-3">
 <%= f.radio_button :rating, "1", :class => "star-rating__item" %><i></i>
 <%= f.radio_button :rating, "2", :class => "star-rating__item" %><i></i>
 <%= f.radio_button :rating, "3", :class => "star-rating__item" %><i></i>
@@ -22,9 +22,9 @@
 <div>
 <%= f.label "インターンをここに決めた理由と入ってからのギャップ" %>
 </div>
-<%= f.text_area :content, :class => "form-control" %>
+<%= f.text_area :content, :class => "form-control mb-3" %>
 <%= f.label "やっていた仕事と学べたこと" %>
-<%= f.text_area :job, :class => "form-control" %>
+<%= f.text_area :job, :class => "form-control mb-3" %>
 <%= f.label "おすすめポイント" %>
 <%= f.text_area :recommend, :class => "form-control" %>
 <%= f.submit value:"更新", :class => "btn btn-info mt-3" %>

@@ -1,3 +1,4 @@
+<div class="container comment-edit mb-5">
 <%= form_for :comment, url: "/posts/#{@comment.post_id}/comment/#{@comment.id}" do |f| %>
 <% @comment.errors.full_messages.each do |message| %>
 <div>
@@ -6,11 +7,11 @@
 <% end %>
 <%= f.hidden_field :post_id, value: @post.id %>
 <%= f.label "タイトル" %>
-<%= f.text_field :title, :class => "form-control" %>
+<%= f.text_field :title, :class => "form-control mb-3" %>
 <div>
 <%= f.label "総合評価" %>
 </div>
-<div class="star-rating">
+<div class="star-rating mb-3">
 <%= f.radio_button :rating, "1", :class => "star-rating__item" %><i></i>
 <%= f.radio_button :rating, "2", :class => "star-rating__item" %><i></i>
 <%= f.radio_button :rating, "3", :class => "star-rating__item" %><i></i>
@@ -19,11 +20,12 @@
 </div>
 <div>
 <%= f.label "インターンをここに決めた理由と入ってからのギャップ" %>
-<%= f.text_area :content, :class => "form-control" %>
+<%= f.text_area :content, :class => "form-control mb-3" %>
 </div>
 <%= f.label "やっていた仕事と学べたこと" %>
-<%= f.text_area :job, :class => "form-control" %>
+<%= f.text_area :job, :class => "form-control mb-3" %>
 <%= f.label "おすすめポイント" %>
 <%= f.text_area :recommend, :class => "form-control" %>
-<%= f.submit value:"投稿", :class => "btn btn-info" %>
+<%= f.submit value:"更新", :class => "btn btn-info mt-3" %>
 <% end %>
+</div>

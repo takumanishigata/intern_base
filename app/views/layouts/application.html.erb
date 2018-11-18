@@ -15,14 +15,13 @@
 <body>
   <header>
     <nav class="navbar navbar-expand-lg navbar-light alert-light fixed-top">
-
+    <%= link_to "INTERN BASE", "/",:class =>"navbar-brand" %>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
         aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav mr-auto">
-          <%= link_to "INTERN BASE", "/",:class =>"navbar-brand" %>
         </ul>
         <ul class="navbar-nav">
           <% if @current_user %>

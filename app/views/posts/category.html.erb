@@ -1,4 +1,4 @@
-<div class="mt-5 alert alert-light">
+<div class="mt-5 alert alert-light text-center">
 <% if params[:category] == "1" %>
   <h2>とがった事業やカルチャーのスタートアップ</h2>
 <% end %>
@@ -15,14 +15,14 @@
   <h2>事業規模が大きい大手企業</h2>
 <% end %>
 </div>
-<div class="container mb-5">
+<div class="container mb-5 text-center">
   <div class="row">
     <% @posts.each do |post|%>
     <div class="col-md-4 col-sm-6 col-xs-12 post">
       <div class="card mb-4 shadow-sm">
         <%= image_tag post.image.url,:class=>"card-img-top posts-index__image" %>
         <div class="card-body posts-index__body">
-          <h5 class="card-title">
+          <h5 class="card-title posts-index__name">
             <%= post.name %>
           </h5>
           <p class="card-text">
@@ -30,8 +30,9 @@
             <span><img src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMjBweCIgaGVpZ2h0PSIyMHB4IiB2aWV3Qm94PSIwIDAgMjAgMjAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDIwIDIwIiB4bWw6c3BhY2U9InByZXNlcnZlIj48cG9seWdvbiBmaWxsPSIjRkZERjg4IiBwb2ludHM9IjEwLDAgMTMuMDksNi41ODMgMjAsNy42MzkgMTUsMTIuNzY0IDE2LjE4LDIwIDEwLDE2LjU4MyAzLjgyLDIwIDUsMTIuNzY0IDAsNy42MzkgNi45MSw2LjU4MyAiLz48L3N2Zz4=" class="posts-index__star" ></span>
             <% end %>
           </p>
+          <p class="card-text text-dark alert bg-light posts-index__recommend" >おすすめポイント</p>
           <p class="card-text posts-index__text">
-            <%= post.content %>
+            <%= post.recommend %>
           </p>
           <%= link_to "より詳しく", "/posts/#{post.id}",:class=>"btn btn-info" %>
           <span class="fa fa-comments text-right"><%= Comment.where(post_id:post.id).count %></span>

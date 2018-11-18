@@ -6,7 +6,7 @@
 <% end %>
 <%= form_tag("/login") do %>
 <p>メールアドレス</p>
-<input name="email" class="form-control" value="<%= @email %>">
+<input name="email" class="form-control mb-3" value="<%= @email %>">
 <p>パスワード</p>
 <input type="password" class="form-control" name="password" value="<%= @password %>">
 <input type="submit" class="btn btn-info mt-3" value="ログイン">

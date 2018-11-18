@@ -1,4 +1,6 @@
 class CommentController < ApplicationController
+  before_action :authenticate_user, {only: [:show,:new,:create]}
+  before_action :ensure_correct_user, {only: [:edit,:update]}
   def new
     @comment = Comment.new
     @post = Post.find_by(id: params[:post_id])
@@ -37,6 +39,15 @@ class CommentController < ApplicationController
     @comment.destroy
     flash[:notice] = "投稿を削除しました"	
     redirect_to("/posts/#{@comment.post_id}")
+  end
+
+  def ensure_correct_user
+    comment = Comment.find(params[:id])
+    user = User.find_by(id:comment.user_id)
+    if user.id != @current_user.id
+      flash[:notice] = "権限がありません"
+      redirect_to("/")
+    end
   end
 
   private

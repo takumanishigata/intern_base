@@ -6,14 +6,14 @@
 </div>
 <% end %>
 <%= f.label "本人確認のためパスワードを入力してください" %>
-<%= f.password_field :password, :class => "form-control" %>
+<%= f.password_field :password, :class => "form-control mb-3" %>
 <h5>変更項目</h5>
 <%= f.label "ニックネーム" %>
-<%= f.text_field :name, :class => "form-control" %>
+<%= f.text_field :name, :class => "form-control mb-3" %>
 <%= f.label "メールアドレス" %>
-<%= f.email_field :email,:class => "form-control" %>
+<%= f.email_field :email,:class => "form-control mb-3" %>
 <%=f.label "画像をアップロード" %>
-<%= f.file_field :image, :class => "form-control-file" %>
+<%= f.file_field :image, :class => "form-control-file mb-3" %>
 <%= f.submit value:"更新", :class => "btn btn-primary" %>
 <% end %>
 </div>
