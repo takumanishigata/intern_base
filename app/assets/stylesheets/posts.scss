@@ -20,6 +20,9 @@
   &__title {
     color: #fff;
   }
+  &__subtitle {
+    color: #fff;
+  }
   &__name {
     overflow: hidden;
     text-overflow: ellipsis;
@@ -43,6 +46,9 @@
     text-overflow: ellipsis;
     white-space: nowrap;
   }
+  &__auth {
+    margin-top: 3rem;
+  }
 }
 // show
 .posts-show {
@@ -53,8 +59,9 @@
     object-fit: cover;
   }
   &__star {
-    width: 50px;
+    width: 30px;
     height: auto;
+    margin-bottom: 2rem;
   }
   &__contributor {
     margin-bottom: 10px;

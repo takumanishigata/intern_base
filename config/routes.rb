@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get '/rules' => "home#rules"
+  get '/privacy' => "home#privacy"
+  get '/contact' => "home#contact"
+  
   post "/posts/:post_id/comment/:id" => "comment#update"
   get "category/:category" => "posts#category"
   post "likes/:post_id/create" => "likes#create"

@@ -52,6 +52,14 @@
   </div>
   <% end %>
   <%= yield %>
+  <footer>
+  <div class="container text-center">
+  <%= link_to "利用規約", "/rules",:class =>"text-dark" %>
+  <%= link_to "プライバシーポリシー", "/privacy",:class =>"text-dark" %>
+  <%= link_to "お問い合わせ", "/contact",:class =>"text-dark" %>
+  <p>&#169; 2018 INTERN BASE All rights reserved.</p>
+  </div>
+  </footer>
 </body>
 
 </html>

@@ -1,6 +1,12 @@
 <div class="jumbotron jumbotron-fluid posts-index__jumbotron mt-5">
   <div class="container">
     <h1 class="display-1 posts-index__title">INTERN BASE</h1>
+    <div class="posts-index__auth">
+    <% unless @current_user %>
+    <%= link_to "新規登録", "/signup",:class =>"btn btn-info" %>
+    <%= link_to "ログイン", "/login",:class =>"btn btn-info" %>
+    <% end %>
+    </div>
   </div>
 </div>
 
