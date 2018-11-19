@@ -71,6 +71,8 @@ gem 'carrierwave'
 gem 'bootstrap', '~> 4.1.3'
 gem 'jquery-rails'
 gem 'cloudinary'
+# アナリティクス
+gem 'google-analytics-rails'
 #herokuデプロイ用設定
 group :production do
   gem 'pg'
