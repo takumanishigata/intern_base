@@ -10,6 +10,16 @@
 <%= f.label "画像" %>
 <%= f.file_field :image, :class => "form-control-file mb-3" %>
 <div>
+<%= f.label "カテゴリー(いずれかで最も当てはまるものを選んで下さい。)" %>
+</div>
+<div class="mb-3">
+<div><%= f.radio_button :category, "1" %>とがった事業やカルチャーのスタートアップ</div>
+<div><%= f.radio_button :category, "2" %>急成長中のミドルベンチャー</div>
+<div><%= f.radio_button :category, "3" %>クリエイティブを活かせるメガベンチャー</div>
+<div><%= f.radio_button :category, "4" %>技術力が強みのテックカンパニー</div>
+<div><%= f.radio_button :category, "5" %>事業規模が大きい大手企業</div>
+</div>
+<div>
 <%= f.label "総合評価" %>
 </div>
 <div class="star-rating mb-3">
