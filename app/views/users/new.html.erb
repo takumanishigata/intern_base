@@ -11,7 +11,7 @@
 <%= f.email_field :email,:class => "form-control mb-3" %>
 <%= f.label "パスワード" %>
 <%= f.password_field :password, :class => "form-control mb-3" %>
-<%=f.label "画像をアップロード" %>
+<%=f.label "プロフィール画像(個人が特定できるような写真はお控えください。)" %>
 <%= f.file_field :image, :class => "form-control-file" %>
 <%= f.submit value:"新規登録", :class => "btn btn-info mt-3" %>
 <% end %>
